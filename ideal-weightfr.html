@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness & Bien-Être</title>
+  <link rel="stylesheet" href="css/style1projet.css">
+</head>
+<body>
+  <header>
+    <img src="media/logo.png" alt="Logo Fitness">
+    <h1>POWER STRENGTH GYM</h1>
+  </header><br>
+
+  <nav>
+    <button onclick="window.location.href='indexfr.html'">ACCUEIL</button><br>
+    <button onclick="window.location.href='shirtsfr.html'">BOUTIQUE DE CHEMISES</button><br>
+    <button onclick="window.location.href='accessoriesfr.html'">ACCESSOIRES</button><br>
+    <button onclick="window.location.href='supplementsfr.html'">COMPLÉMENTS</button><br>
+    <button onclick="window.location.href='ideal-weightfr.html'">POIDS IDÉAL</button><br>
+    <button onclick="window.location.href='programmesfr.html'">PROGRAMMES</button><br>
+    <button onclick="window.location.href='helpfr.html'">AIDE</button><br>
+    <button onclick="window.location.href='servicesfr.html'">SERVICES</button><br>
+    <button onclick="window.location.href='contactfr.html'">CONTACT</button><br>
+    <button onclick="window.location.href='ideal-weight.html'">EN</button><br>
+  </nav>
+  <br>
+  <br><br>
+
+<div class="calculator-container">
+    <h2>Calculateur</h2>
+    <div class="form-group">
+        <label for="age">Âge (entre 2 et 80 ans)</label>
+        <input type="number" id="age" min="2" max="80" value="25">
+    </div>
+    <div class="form-group">
+        <label>Genre</label>
+        <div class="gender-group">
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male">Homme</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Femme</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="height">Taille (cm)</label>
+        <input type="number" id="height" min="50" max="250" value="180">
+    </div>
+    <div class="button-container">
+        <button class="btn btn-calculate" onclick="calculate()">Calculer</button>
+        <button class="btn btn-clear" onclick="clearFields()">Réinitialiser</button>
+    </div>
+    <div class="result" id="result"></div><br><br><br>
+    <img src="https://i.pinimg.com/originals/bc/91/7f/bc917fc90248fbab91634c67f5936d66.jpg" alt="">
+</div><br>
+
+<script>
+    function calculate() {
+        const age = parseInt(document.getElementById('age').value);
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const height = parseInt(document.getElementById('height').value);
+        
+        const result = (height * 0.5 + age * 0.3) + (gender === 'male' ? 10 : 5);
+        
+        document.getElementById('result').textContent = "Résultat : " + result.toFixed(2);
+    }
+    
+    function clearFields() {
+        document.getElementById('age').value = '';
+        document.getElementById('height').value = '';
+        document.getElementById('result').textContent = '';
+        document.querySelector('input[name="gender"][value="male"]').checked = true;
+    }
+</script>
+
+<br><br>
+<footer>
+  <div class="container">
+      
+      <div class="footer-links">
+          
+          <ul>
+              <li><a href="#">ACCUEIL</a></li>
+              <li><a href="#">BOUTIQUE DE CHEMISES</a></li>
+              <li><a href="#">ACCESSOIRES</a></li>
+              <li><a href="#">COMPLÉMENTS</a></li>
+              <li><a href="#">POIDS IDÉAL</a></li>
+              <li><a href="#">PROGRAMMES</a></li>
+              <li><a href="#">AIDE</a></li>
+              <li><a href="#">SERVICES</a></li>
+              <li><a href="#">CONTACT</a></li>
+              <li><a href="#">LANGUE</a></li>
+          </ul>
+      </div>
+      
+      <div class="newsletter">
+          <h5>Rechercher dans notre boutique</h5>
+          <form>
+              <input type="email" >
+              <button type="submit">Rechercher</button>
+          </form>
+      </div>
+  </div>
+  
+</footer>
+
+</body>
+</html>
