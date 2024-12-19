@@ -811,8 +811,7 @@ footer .credits a:hover {
 @media (max-width: 768px) {
     /* General adjustments */
     body {
-        background-image: none; /* Removes large images for better performance on mobile */
-        background-color: #333; /* Provides a fallback background */
+        background-image: url(https://wallpaperaccess.com/full/1314309.jpg);
     }
 
     header {
